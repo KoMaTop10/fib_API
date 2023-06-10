@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESTAPI ACCESS TEST</title>
+</head>
+
+<script>
+
+async function callApi() {
+    const res = await fetch('http://127.0.0.1:8000')
+        .then(result => result.json())
+        .then((output) => {
+            console.log('Output: ', output);
+            let tmpVal = output["date"];
+            console.log( String(tmpVal) );
+        }).catch(err => console.error(err));
+};
+
+callApi();
+
+</script>
+</html>
