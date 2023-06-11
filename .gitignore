@@ -1,2 +1,9 @@
 .ipynb_checkpoints
 .DS_Store
+.vercel
+__pycache__
+package-lock.json
+package.json
+requirements.txt
+test.ipynb_checkpoints
+vercel.json
