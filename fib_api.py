@@ -19,4 +19,5 @@ def fibonacci(n:int):
 @app.get("/fib/{n}")
 def index(n:int):
     result = fibonacci(n)
+    status = 200
     return {"result": result}
