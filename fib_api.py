@@ -20,4 +20,3 @@ def fibonacci(n:int):
 def index(n:int):
     result = fibonacci(n)
     return {"result": result}
-
