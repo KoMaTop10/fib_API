@@ -1,12 +1,14 @@
-from fastapi import FastAPI
+from fastapi import FastAPI,HTTPException,Request
+from fastapi.responses import JSONResponse
 
 app = FastAPI()
 
 def fibonacci(n:int):
     
-    if n < 0:
-        return -1
-    elif n == 1 or n == 2:
+    if n <= 0:
+        raise HTTPException(status_code=400, detail="Negative number error")
+
+    if n == 1 or n == 2:
         return 1
     
     a = 1
@@ -16,8 +18,24 @@ def fibonacci(n:int):
         a,b =b, a + b
     return b
 
-@app.get("/fib/{n}")
+@app.get("/fib/")
 def index(n:int):
+    if n < 1:
+        raise UnicornException(num=n)
+    
     result = fibonacci(n)
-    status = 200
     return {"result": result}
+
+class UnicornException(Exception):
+    def __init__(self, num: int):
+        self.num = num
+
+@app.exception_handler(UnicornException)
+async def unicorn_exception_handler(request: Request, exc: UnicornException):
+    return JSONResponse(
+        status_code=400,
+        content={
+            "status":400,
+            "message": f"Bad request"
+            },
+    )
