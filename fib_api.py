@@ -18,7 +18,7 @@ def fibonacci(n:int):
         a,b =b, a + b
     return b
 
-@app.get("/fib/")
+@app.get("/fib/{n}")
 def index(n:int):
     if n < 1:
         raise UnicornException(num=n)
