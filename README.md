@@ -7,7 +7,7 @@ vercelでのデプロイがうまくいきませんでした。非同期処理�
 
 簡単な構築のAPIは[こちら][link-1]になります
 
-[link-1]: https://github.com/KoMaTop10/fib_API
+[link-1]: https://github.com/KoMaTop10/fib_API_test
 
 ## 使用ライブラリ
 
