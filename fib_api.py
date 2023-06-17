@@ -6,7 +6,7 @@ app = FastAPI()
 def fibonacci(n:int):
     
     if n <= 0:
-        raise HTTPException(status_code=400, detail="Bad request")
+        return 0
 
     if n == 1 or n == 2:
         return 1
@@ -19,7 +19,7 @@ def fibonacci(n:int):
     return b
 
 @app.get("/fib")
-def index(n:int=Query()):
+def get_fib(n:int=Query()):
     if n < 1:
         raise UnicornException(num=n)
     
