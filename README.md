@@ -15,6 +15,8 @@ FastAPI
 
 uvicorn
 
+pytest
+
 ## 使用方法
 
 `uvicorn fib_api:app` 
@@ -68,4 +70,8 @@ FastAPIでfibonacciの出力をjson形式で出力させるための関数です
 - n=0
 - n=-1
 - n=文字列
+
+`pytest`
+
+でテストを実行します
 
