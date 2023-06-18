@@ -7,13 +7,15 @@ vercelでのデプロイがうまくいきませんでした。非同期処理�
 
 簡単な構築のAPIは[こちら][link-1]になります
 
-[link-1]: https://github.com/KoMaTop10/fib_API
+[link-1]: https://github.com/KoMaTop10/fib_API_test
 
 ## 使用ライブラリ
 
 FastAPI
 
 uvicorn
+
+pytest
 
 ## 使用方法
 
@@ -68,4 +70,8 @@ FastAPIでfibonacciの出力をjson形式で出力させるための関数です
 - n=0
 - n=-1
 - n=文字列
+
+`pytest`
+
+でテストを実行します
 
