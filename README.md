@@ -5,7 +5,7 @@ n番目のフィボナッチ数を返すAPIです
 
 vercelでのデプロイがうまくいきませんでした。非同期処理の関数があるからうまくいかなかったのかなと思ってます。
 
-簡単な構築のAPIは[こちら][link-1]になります
+デプロイまでできた簡単な構築のAPIは[こちら][link-1]になります
 
 [link-1]: https://github.com/KoMaTop10/fib_API_test
 
@@ -58,7 +58,55 @@ fibonacci(-1)
 
 - get_fib
 
-FastAPIでfibonacciの出力をjson形式で出力させるための関数です
+FastAPIでfibonacciの出力をjson形式で出力させるための関数です。
+自然数が入力された際に以下のように出力を返します(n = 99のとき)。
+
+```json
+{
+  "result":218922995834555169026
+}
+```
+
+
+- ZeroException
+
+n=0の時のエラー処理を行うためのクラスです。
+0が入力された際に以下のようにして出力をjson形式で返します。
+
+```json
+{
+  "Status":400,
+  "ErrorType":"Zero Error",
+  "Message":"Type natural number"
+}
+```
+
+- NegativeException
+
+nが負の自然数の時のエラー処理を行うためのクラスです。
+負の自然数が入力された際に以下のようにして出力をjson形式で返します(n=-10とした時)。
+
+```json
+{
+  "Status":400,
+  "ErrorType":"Negative Number Error",
+  "Message":"-10 is negative number. type natural number"
+}
+```
+
+
+- validation_exception_handler
+型エラーが発生した際にエラー処理を行うためのクラスです。
+
+入力が整数型ではない時に以下のようにして出力をjson形式で返します
+
+```json
+{
+  "Status":400,
+  "ErrorType":"Validation Error",
+  "Message":"Type natural number"
+}
+```
 
 ### test_fib_api.py
 テスト用のコードです。
@@ -69,6 +117,7 @@ FastAPIでfibonacciの出力をjson形式で出力させるための関数です
 - n=99
 - n=0
 - n=-1
+- n=3.14
 - n=文字列
 
 `pytest`
