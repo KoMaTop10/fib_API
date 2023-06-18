@@ -19,7 +19,9 @@ pytest
 
 ## 使用方法
 
-`uvicorn fib_api:app` 
+```
+uvicorn fib_api:app
+``` 
 
 でローカルサーバーを立ち上げます
 
