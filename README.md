@@ -61,7 +61,7 @@ fibonacci(-1)
 FastAPIでfibonacciの出力をjson形式で出力させるための関数です。
 自然数が入力された際に以下のように出力を返します(n = 99のとき)。
 
-```json:json
+```json
 {
   "result":218922995834555169026
 }
@@ -73,7 +73,7 @@ FastAPIでfibonacciの出力をjson形式で出力させるための関数です
 n=0の時のエラー処理を行うためのクラスです。
 0が入力された際に以下のようにして出力をjson形式で返します。
 
-```json:json
+```json
 {
   "Status":400,
   "ErrorType":"Zero Error",
@@ -86,7 +86,7 @@ n=0の時のエラー処理を行うためのクラスです。
 nが負の自然数の時のエラー処理を行うためのクラスです。
 負の自然数が入力された際に以下のようにして出力をjson形式で返します(n=-10とした時)。
 
-```json:json
+```json
 {
   "Status":400,
   "ErrorType":"Negative Number Error",
@@ -100,7 +100,7 @@ nが負の自然数の時のエラー処理を行うためのクラスです。
 
 入力が整数型ではない時に以下のようにして出力をjson形式で返します
 
-```json:json
+```json
 {
   "Status":400,
   "ErrorType":"Validation Error",
