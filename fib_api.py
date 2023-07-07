@@ -44,7 +44,7 @@ class NegativeException(Exception):
         
 
 @app.exception_handler(NegativeException)
-async def negative_exception_handler(request: Request, exc: NegativeException):
+def negative_exception_handler(request: Request, exc: NegativeException):
     
     return JSONResponse(
         status_code=400,
@@ -62,7 +62,7 @@ class ZeroException(Exception):
         self.num = num
 
 @app.exception_handler(ZeroException)
-async def zero_exception_handler(request: Request, exc: ZeroException):
+def zero_exception_handler(request: Request, exc: ZeroException):
     
     return JSONResponse(
         status_code=400,
@@ -76,7 +76,7 @@ async def zero_exception_handler(request: Request, exc: ZeroException):
 
 #nの型が異なる場合の例外処理
 @app.exception_handler(RequestValidationError)
-async def validation_exception_handler(request: Request, exc: RequestValidationError):
+def validation_exception_handler(request: Request, exc: RequestValidationError):
     
     return JSONResponse(
         status_code=400,
