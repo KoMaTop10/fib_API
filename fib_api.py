@@ -25,7 +25,7 @@ def fibonacci(n:int):
 
 # "/fib/?n=n"でn番目のフィボナッチ数を出力する
 
-@app.get("/fib")
+@app.get("/fib/{n}")
 def get_fib(n:int):
     if n < 0:
         raise NegativeException(num=n)
